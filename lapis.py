@@ -317,7 +317,7 @@ class LapisLazuli:
                 **self.options)
         else:
             text = self.options.get('post_template',
-                                    '{links}\n\n---\n^(I am a bot running Lapis Mirror {version}.)').format(
+                                    '{links}\n\n---\n ^(I am a bot.) [^(Let me know if something went wrong)](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=TheMirrorPool)^(. | ) [^(Source Code)](https://github.com/kupiakos/LapisMirror/)').format(
                 links=links_display, **self.options)
         try:
             comment = submission.add_comment(text)
