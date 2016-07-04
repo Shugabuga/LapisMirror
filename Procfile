@@ -1,1 +1,1 @@
-lapis-shuga: python3 lapis.py
+lapisshuga: python3 lapis.py
