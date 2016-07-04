@@ -907,3 +907,232 @@ praw.errors.RateLimitExceeded: `you are doing that too much. try again in 4 minu
 2016-07-04 18:02:08,426 - lapis        - DEBUG - Processing submission
         permalink:https://www.reddit.com/r/heyitsshugatest/comments/4qu9gy/test/
         url:      http://jen-iii.tumblr.com/post/146728130751/so-i-saw-this-image-here-and-just-thought-of
+2016-07-04 18:14:00,408 - lapis        - INFO  -  --- STARTING LAPIS MIRROR --- 
+2016-07-04 18:14:00,427 - lapis        - INFO  - Logging into Reddit...
+2016-07-04 18:14:04,641 - lapis        - DEBUG - plugins_dir: plugins
+2016-07-04 18:14:04,641 - lapis        - DEBUG - plugins_package: plugins
+2016-07-04 18:14:04,667 - lapis        - DEBUG - Parsing module <module 'plugins.artstation' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/artstation.py">
+2016-07-04 18:14:04,668 - lapis        - INFO  - Initializing plugin ArtstationPlugin
+2016-07-04 18:14:04,669 - lapis        - DEBUG - Parsing module <module 'plugins.deviantart' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/deviantart.py">
+2016-07-04 18:14:04,669 - lapis        - INFO  - Initializing plugin DeviantArtPlugin
+2016-07-04 18:14:04,671 - lapis        - DEBUG - Parsing module <module 'plugins.drawcrowd' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/drawcrowd.py">
+2016-07-04 18:14:04,671 - lapis        - INFO  - Initializing plugin DrawcrowdPlugin
+2016-07-04 18:14:04,672 - lapis        - DEBUG - Parsing module <module 'plugins.flickr' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/flickr.py">
+2016-07-04 18:14:04,672 - lapis        - INFO  - Initializing plugin FlickrPlugin
+2016-07-04 18:14:04,673 - lapis        - DEBUG - Parsing module <module 'plugins.fourchan' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/fourchan.py">
+2016-07-04 18:14:04,673 - lapis        - INFO  - Initializing plugin FourChanPlugin
+2016-07-04 18:14:04,674 - lapis        - DEBUG - Parsing module <module 'plugins.gifscom' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/gifscom.py">
+2016-07-04 18:14:04,674 - lapis        - INFO  - Initializing plugin GifscomPlugin
+2016-07-04 18:14:04,679 - lapis        - DEBUG - Parsing module <module 'plugins.gyazo' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/gyazo.py">
+2016-07-04 18:14:04,682 - lapis        - INFO  - Initializing plugin GyazoPlugin
+2016-07-04 18:14:04,843 - lapis        - DEBUG - Parsing module <module 'plugins.imgur' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/imgur.py">
+2016-07-04 18:14:04,843 - lapis        - INFO  - Initializing plugin ImgurPlugin
+2016-07-04 18:14:04,845 - lapis        - DEBUG - Parsing module <module 'plugins.puush' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/puush.py">
+2016-07-04 18:14:04,845 - lapis        - INFO  - Initializing plugin PuushPlugin
+2016-07-04 18:14:04,846 - lapis        - DEBUG - Parsing module <module 'plugins.rawvideo' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/rawvideo.py">
+2016-07-04 18:14:04,846 - lapis        - INFO  - Initializing plugin RawVideoPlugin
+2016-07-04 18:14:04,847 - lapis        - DEBUG - Parsing module <module 'plugins.tinypic' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/tinypic.py">
+2016-07-04 18:14:04,847 - lapis        - INFO  - Initializing plugin TinypicPlugin
+2016-07-04 18:14:04,848 - lapis        - DEBUG - Parsing module <module 'plugins.tumblr' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/tumblr.py">
+2016-07-04 18:14:04,848 - lapis        - INFO  - Initializing plugin TumblrPlugin
+2016-07-04 18:14:04,900 - lapis        - DEBUG - Parsing module <module 'plugins.twitter' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/twitter.py">
+2016-07-04 18:14:04,900 - lapis        - INFO  - Initializing plugin TwitterPlugin
+2016-07-04 18:14:04,901 - lapis        - DEBUG - Parsing module <module 'plugins.vidme' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/vidme.py">
+2016-07-04 18:14:04,901 - lapis        - INFO  - Initializing plugin VidmePlugin
+2016-07-04 18:14:04,902 - lapis        - DEBUG - Calling verify_options() on plugins
+2016-07-04 18:14:04,902 - lapis        - DEBUG - Calling login() on plugins
+2016-07-04 18:14:04,902 - lapis.imgur  - INFO  - Logging into imgur...
+2016-07-04 18:14:05,895 - lapis.twitter - INFO  - Logging into Twitter...
+2016-07-04 18:14:05,896 - lapis.vidme  - INFO  - Logging into vid.me with username lapis-shuga...
+2016-07-04 18:14:09,711 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4r9dug/bot_test_hoi/
+        url:      http://heyitsshuga.deviantart.com/art/Temmie-617476149
+2016-07-04 18:14:11,527 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:14:11,528 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r9dtf/bot_test_hoi/
+        url:      http://heyitsshuga.deviantart.com/art/Temmie-617476149
+2016-07-04 18:14:13,559 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:14:13,560 - lapis.da     - DEBUG - http://heyitsshuga.deviantart.com/art/Temmie-617476149 is valid DA url.
+2016-07-04 18:14:13,560 - lapis.da     - DEBUG - Querying DA API http://backend.deviantart.com/oembed?format=json&url=http%3A%2F%2Fheyitsshuga.deviantart.com%2Fart%2FTemmie-617476149
+2016-07-04 18:14:14,717 - lapis.da     - DEBUG - Author name: HeyItsShuga
+2016-07-04 18:14:16,537 - lapis.da     - DEBUG - Found full DA image url: http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png
+2016-07-04 18:14:16,537 - lapis        - INFO  - Successfully imported data from DeviantArtPlugin.import_submission()
+2016-07-04 18:14:16,537 - lapis        - INFO  - 
+
+Imported data from submission "http://heyitsshuga.deviantart.com/art/Temmie-617476149"
+2016-07-04 18:14:16,538 - lapis        - DEBUG - Import info: [{'import_urls': ['http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png'], 'importer_display': {'header': 'Mirrored deviantArt image by the author "HeyItsShuga":\n\n'}, 'author': 'HeyItsShuga', 'source': 'http://heyitsshuga.deviantart.com/art/Temmie-617476149'}]
+2016-07-04 18:14:16,538 - lapis        - DEBUG - Calling export_submission() on plugins
+2016-07-04 18:14:16,538 - lapis.imgur  - DEBUG - A single image will be uploaded.
+2016-07-04 18:14:16,538 - lapis.imgur  - DEBUG - Uploading URL "http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png" to imgur
+2016-07-04 18:14:18,305 - lapis.imgur  - DEBUG - Uploaded image: {'favorite': False, 'in_gallery': False, 'name': '', 'size': 192747, 'animated': False, 'vote': None, 'link': 'http://i.imgur.com/WHz5Wo9.png', 'title': None, 'nsfw': None, 'description': 'This is a mirror uploaded by /u/TheMirrorPool, originally made by HeyItsShuga, located at http://heyitsshuga.deviantart.com/art/Temmie-617476149', 'account_url': None, 'height': 728, 'bandwidth': 0, 'id': 'WHz5Wo9', 'section': None, 'width': 626, 'datetime': 1467670457, 'account_id': 0, 'deletehash': '2bKScsMbVw5lIGg', 'type': 'image/png', 'views': 0}
+2016-07-04 18:14:18,305 - lapis        - INFO  - Successfully imported data from ImgurPlugin.export_submission()
+2016-07-04 18:14:18,501 - lapis        - ERROR - Had an error posting to Reddit! Attempting cleanup:
+Traceback (most recent call last):
+  File "lapis.py", line 323, in process_submission
+    comment = submission.add_comment(text)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/praw/objects.py", line 1187, in add_comment
+    response = self.reddit_session._add_comment(self.fullname, text)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/praw/__init__.py", line 2669, in _add_comment
+    retval = decorator(add_comment_helper)(self, thing_id, text)
+  File "<decorator-gen-324>", line 2, in add_comment_helper
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/praw/decorators.py", line 271, in wrap
+    return function(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/praw/__init__.py", line 2662, in add_comment_helper
+    retry_on_error=False)
+  File "<decorator-gen-8>", line 2, in request_json
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/praw/decorators.py", line 142, in raise_api_exceptions
+    raise error_list[0]
+praw.errors.RateLimitExceeded: `you are doing that too much. try again in 2 minutes.` on field `ratelimit`
+
+2016-07-04 18:14:18,502 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r8r2p/test/
+        url:      http://eyebird96.tumblr.com/post/146661150159/dress-mabel
+2016-07-04 18:14:20,599 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:14:20,599 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r866c/bot_test/
+        url:      http://fabulousotakuu.tumblr.com/post/146862321806/i-like-how-theyre-holding-on-to-each-others-arms
+2016-07-04 18:17:22,654 - lapis        - INFO  -  --- STARTING LAPIS MIRROR --- 
+2016-07-04 18:17:22,654 - lapis        - INFO  - Logging into Reddit...
+2016-07-04 18:17:26,842 - lapis        - DEBUG - plugins_dir: plugins
+2016-07-04 18:17:26,842 - lapis        - DEBUG - plugins_package: plugins
+2016-07-04 18:17:26,860 - lapis        - DEBUG - Parsing module <module 'plugins.artstation' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/artstation.py">
+2016-07-04 18:17:26,860 - lapis        - INFO  - Initializing plugin ArtstationPlugin
+2016-07-04 18:17:26,861 - lapis        - DEBUG - Parsing module <module 'plugins.deviantart' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/deviantart.py">
+2016-07-04 18:17:26,861 - lapis        - INFO  - Initializing plugin DeviantArtPlugin
+2016-07-04 18:17:26,862 - lapis        - DEBUG - Parsing module <module 'plugins.drawcrowd' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/drawcrowd.py">
+2016-07-04 18:17:26,862 - lapis        - INFO  - Initializing plugin DrawcrowdPlugin
+2016-07-04 18:17:26,863 - lapis        - DEBUG - Parsing module <module 'plugins.flickr' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/flickr.py">
+2016-07-04 18:17:26,863 - lapis        - INFO  - Initializing plugin FlickrPlugin
+2016-07-04 18:17:26,864 - lapis        - DEBUG - Parsing module <module 'plugins.fourchan' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/fourchan.py">
+2016-07-04 18:17:26,864 - lapis        - INFO  - Initializing plugin FourChanPlugin
+2016-07-04 18:17:26,864 - lapis        - DEBUG - Parsing module <module 'plugins.gifscom' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/gifscom.py">
+2016-07-04 18:17:26,864 - lapis        - INFO  - Initializing plugin GifscomPlugin
+2016-07-04 18:17:26,865 - lapis        - DEBUG - Parsing module <module 'plugins.gyazo' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/gyazo.py">
+2016-07-04 18:17:26,865 - lapis        - INFO  - Initializing plugin GyazoPlugin
+2016-07-04 18:17:26,871 - lapis        - DEBUG - Parsing module <module 'plugins.imgur' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/imgur.py">
+2016-07-04 18:17:26,871 - lapis        - INFO  - Initializing plugin ImgurPlugin
+2016-07-04 18:17:26,871 - lapis        - DEBUG - Parsing module <module 'plugins.puush' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/puush.py">
+2016-07-04 18:17:26,871 - lapis        - INFO  - Initializing plugin PuushPlugin
+2016-07-04 18:17:26,872 - lapis        - DEBUG - Parsing module <module 'plugins.rawvideo' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/rawvideo.py">
+2016-07-04 18:17:26,872 - lapis        - INFO  - Initializing plugin RawVideoPlugin
+2016-07-04 18:17:26,872 - lapis        - DEBUG - Parsing module <module 'plugins.tinypic' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/tinypic.py">
+2016-07-04 18:17:26,873 - lapis        - INFO  - Initializing plugin TinypicPlugin
+2016-07-04 18:17:26,873 - lapis        - DEBUG - Parsing module <module 'plugins.tumblr' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/tumblr.py">
+2016-07-04 18:17:26,873 - lapis        - INFO  - Initializing plugin TumblrPlugin
+2016-07-04 18:17:26,904 - lapis        - DEBUG - Parsing module <module 'plugins.twitter' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/twitter.py">
+2016-07-04 18:17:26,905 - lapis        - INFO  - Initializing plugin TwitterPlugin
+2016-07-04 18:17:26,905 - lapis        - DEBUG - Parsing module <module 'plugins.vidme' from "/Volumes/Jeffrey's-Passport/Electron/released/LapisMirror/plugins/vidme.py">
+2016-07-04 18:17:26,906 - lapis        - INFO  - Initializing plugin VidmePlugin
+2016-07-04 18:17:26,906 - lapis        - DEBUG - Calling verify_options() on plugins
+2016-07-04 18:17:26,906 - lapis        - DEBUG - Calling login() on plugins
+2016-07-04 18:17:26,906 - lapis.imgur  - INFO  - Logging into imgur...
+2016-07-04 18:17:27,934 - lapis.twitter - INFO  - Logging into Twitter...
+2016-07-04 18:17:27,934 - lapis.vidme  - INFO  - Logging into vid.me with username lapis-shuga...
+2016-07-04 18:17:32,763 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4r9dug/bot_test_hoi/
+        url:      http://heyitsshuga.deviantart.com/art/Temmie-617476149
+2016-07-04 18:17:35,622 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:35,622 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r9dtf/bot_test_hoi/
+        url:      http://heyitsshuga.deviantart.com/art/Temmie-617476149
+2016-07-04 18:17:36,952 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:17:36,953 - lapis.da     - DEBUG - http://heyitsshuga.deviantart.com/art/Temmie-617476149 is valid DA url.
+2016-07-04 18:17:36,953 - lapis.da     - DEBUG - Querying DA API http://backend.deviantart.com/oembed?url=http%3A%2F%2Fheyitsshuga.deviantart.com%2Fart%2FTemmie-617476149&format=json
+2016-07-04 18:17:38,581 - lapis.da     - DEBUG - Author name: HeyItsShuga
+2016-07-04 18:17:40,286 - lapis.da     - DEBUG - Found full DA image url: http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png
+2016-07-04 18:17:40,287 - lapis        - INFO  - Successfully imported data from DeviantArtPlugin.import_submission()
+2016-07-04 18:17:40,287 - lapis        - INFO  - 
+
+Imported data from submission "http://heyitsshuga.deviantart.com/art/Temmie-617476149"
+2016-07-04 18:17:40,287 - lapis        - DEBUG - Import info: [{'importer_display': {'header': 'Mirrored deviantArt image by the author "HeyItsShuga":\n\n'}, 'import_urls': ['http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png'], 'source': 'http://heyitsshuga.deviantart.com/art/Temmie-617476149', 'author': 'HeyItsShuga'}]
+2016-07-04 18:17:40,287 - lapis        - DEBUG - Calling export_submission() on plugins
+2016-07-04 18:17:40,287 - lapis.imgur  - DEBUG - A single image will be uploaded.
+2016-07-04 18:17:40,287 - lapis.imgur  - DEBUG - Uploading URL "http://orig10.deviantart.net/1825/f/2016/176/3/9/temmie_by_heyitsshuga-da7mnn9.png" to imgur
+2016-07-04 18:17:42,897 - lapis.imgur  - DEBUG - Uploaded image: {'id': 'r2U3HuZ', 'title': None, 'size': 192747, 'favorite': False, 'link': 'http://i.imgur.com/r2U3HuZ.png', 'bandwidth': 0, 'animated': False, 'vote': None, 'account_url': None, 'in_gallery': False, 'height': 728, 'views': 0, 'section': None, 'nsfw': None, 'type': 'image/png', 'description': 'This is a mirror uploaded by /u/TheMirrorPool, originally made by HeyItsShuga, located at http://heyitsshuga.deviantart.com/art/Temmie-617476149', 'account_id': 0, 'datetime': 1467670661, 'width': 626, 'name': '', 'deletehash': 'xtSKPNZHTIEE6ie'}
+2016-07-04 18:17:42,897 - lapis        - INFO  - Successfully imported data from ImgurPlugin.export_submission()
+2016-07-04 18:17:43,194 - lapis        - INFO  - Replied comment to https://www.reddit.com/r/heyitsshugatest2/comments/4r9dtf/bot_test_hoi/
+2016-07-04 18:17:45,084 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r8r2p/test/
+        url:      http://eyebird96.tumblr.com/post/146661150159/dress-mabel
+2016-07-04 18:17:47,136 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:47,136 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/4r866c/bot_test/
+        url:      http://fabulousotakuu.tumblr.com/post/146862321806/i-like-how-theyre-holding-on-to-each-others-arms
+2016-07-04 18:17:49,170 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:49,170 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4r81a2/bot_test_feed_him_gravel/
+        url:      http://fabulousotakuu.tumblr.com/post/146862321806/i-like-how-theyre-holding-on-to-each-others-arms
+2016-07-04 18:17:51,187 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:51,188 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4r4juj/another_bot_test/
+        url:      http://ajmoonstar.tumblr.com/post/146864530433/ohprcr-let-go-to-the-beach-%EF%BE%89-%E3%83%AE-%EF%BE%89%EF%BE%9F
+2016-07-04 18:17:53,916 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:53,917 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4qu9gy/test/
+        url:      http://jen-iii.tumblr.com/post/146728130751/so-i-saw-this-image-here-and-just-thought-of
+2016-07-04 18:17:55,187 - lapis        - DEBUG - Have already commented here--moving on.
+2016-07-04 18:17:55,187 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4ix6at/this_is_a_post_for_things/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/4ix6at/this_is_a_post_for_things/
+2016-07-04 18:17:57,234 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:17:57,235 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/4ix6at/this_is_a_post_for_things/"
+2016-07-04 18:17:57,235 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/4hjrt5/bpm_bug_found_certain_modifiers_wont_work_in/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/4hjrt5/bpm_bug_found_certain_modifiers_wont_work_in/
+2016-07-04 18:17:59,195 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:17:59,195 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/4hjrt5/bpm_bug_found_certain_modifiers_wont_work_in/"
+2016-07-04 18:17:59,195 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest2/comments/43i11x/words/
+        url:      https://www.reddit.com/r/heyitsshugatest2/comments/43i11x/words/
+2016-07-04 18:18:01,281 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:01,281 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest2/comments/43i11x/words/"
+2016-07-04 18:18:01,281 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/42v5fx/condensed_memes/
+        url:      https://i.imgur.com/X8aNwDY.gifv
+2016-07-04 18:18:03,649 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:03,650 - lapis        - DEBUG - No processing done on "https://i.imgur.com/X8aNwDY.gifv"
+2016-07-04 18:18:03,650 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/42tuli/nsfw/
+        url:      https://reddit.com/r/heyitsshugatest/dreeemur
+2016-07-04 18:18:05,174 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:05,175 - lapis        - DEBUG - No processing done on "https://reddit.com/r/heyitsshugatest/dreeemur"
+2016-07-04 18:18:05,175 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/40uqmm/for_review_of_bettergfmotes_demo/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/40uqmm/for_review_of_bettergfmotes_demo/
+2016-07-04 18:18:07,206 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:07,206 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/40uqmm/for_review_of_bettergfmotes_demo/"
+2016-07-04 18:18:07,207 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/40omqu/googles_favicon/
+        url:      https://google.com/favicon.ico
+2016-07-04 18:18:09,149 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:09,150 - lapis        - DEBUG - No processing done on "https://google.com/favicon.ico"
+2016-07-04 18:18:09,151 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3zck1a/bettergfmotes_test/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3zck1a/bettergfmotes_test/
+2016-07-04 18:18:11,139 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:11,139 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3zck1a/bettergfmotes_test/"
+2016-07-04 18:18:11,139 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3wjxay/test_gravity_falls_emotes_with_bpm_test/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3wjxay/test_gravity_falls_emotes_with_bpm_test/
+2016-07-04 18:18:13,148 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:13,148 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3wjxay/test_gravity_falls_emotes_with_bpm_test/"
+2016-07-04 18:18:13,149 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3wgyyd/untested_viewing_bpm_emotes_in_alien_blue/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3wgyyd/untested_viewing_bpm_emotes_in_alien_blue/
+2016-07-04 18:18:15,567 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:15,568 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3wgyyd/untested_viewing_bpm_emotes_in_alien_blue/"
+2016-07-04 18:18:15,569 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3tyldv/boot_loop/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3tyldv/boot_loop/
+2016-07-04 18:18:17,251 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:17,251 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3tyldv/boot_loop/"
+2016-07-04 18:18:17,251 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3t2l2f/boot_loop/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3t2l2f/boot_loop/
+2016-07-04 18:18:19,196 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:19,196 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3t2l2f/boot_loop/"
+2016-07-04 18:18:19,196 - lapis        - DEBUG - Processing submission
+        permalink:https://www.reddit.com/r/heyitsshugatest/comments/3sm3ue/ibootie_bot_test/
+        url:      https://www.reddit.com/r/heyitsshugatest/comments/3sm3ue/ibootie_bot_test/
+2016-07-04 18:18:21,739 - lapis        - DEBUG - Calling import_submission() on plugins
+2016-07-04 18:18:21,769 - lapis        - DEBUG - No processing done on "https://www.reddit.com/r/heyitsshugatest/comments/3sm3ue/ibootie_bot_test/"
