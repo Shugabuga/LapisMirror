@@ -1,2 +1,8 @@
 __pycache__/
 .idea/
+<<<<<<< HEAD
+=======
+lapis.conf
+*.log
+
+>>>>>>> kupiakos/master
