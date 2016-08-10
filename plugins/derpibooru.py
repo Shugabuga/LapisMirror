@@ -84,6 +84,8 @@ class DerpibooruPlugin:
                 self.log.debug('Not CDN, will use API')
                 if url.endswith('/'): # If the URL ends with a slash (/), remove
                      url = url[:-1]   #      it so the API works properly.
+                url, sep, trash = url.partition('#') # Removes junk data from URL.
+                url, sep, trash = url.partition('?') # Removes junk data from URL.
                 urlJ = url + '.json' # Allow the API endpoint to work.
                 self.log.debug('Will use API endpoint at ' + urlJ)
                 callapi = requests.get(urlJ) # These next lines uses the API...
