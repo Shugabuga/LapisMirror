@@ -51,6 +51,7 @@ class FurAffinityPlugin:
         self.regex = re.compile(
             r'^https?://('
             r'((?:www\.)?furaffinity\.net/view/(?P<id>\d+).*)|'
+            r'((?:sfw\.)?furaffinity\.net/view/(?P<id>\d+).*)|'
             r'(d\.facdn\.net/art/(?P<artist>[^/]+)/(?P<cdn_id>\d+)/.*)'
             r')$')
 
