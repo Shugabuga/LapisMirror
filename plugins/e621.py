@@ -47,7 +47,7 @@ class e621Plugin:
         """
         self.log = logging.getLogger('lapis.e621')
         self.headers = {'User-Agent': useragent}
-        self.regex = re.compile(r'^https?://(((?:www\.)?(?:static1\.)?((e621)|(e926))\.net/(data/(?P<cdn_id>))?(post/show/(?P<id>\d+)/?)?.*))$')
+        self.regex = re.compile(r'^https?://(((?:www\.)?(?:static1\.)?((e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?(post/show/(?P<id>\d+)/?)?.*))$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
         """Import a submission from e621.
@@ -66,24 +66,30 @@ class e621Plugin:
 
         :param submission: A reddit submission to parse.
         """
+        print('e621 PLUGIN DEBUG - Initiated plugin.')
         try:
             url = html.unescape(submission.url)
-            if not self.regex.match(urlsplit(url).netloc):
+            match = self.regex.match(submission.url)
+            if not match:
+                print('e621 PLUGIN DEBUG - Regex failed') ####################
                 return None
-            data = {'author': 'a e621 user',
-                    'source': url,
-                    'importer_display':
-                        {'header': 'Mirrored e621 image:\n\n'}}
+            print('e621 PLUGIN DEBUG - Regex suceeded') ####################
             r = requests.head(url, headers=self.headers)
             mime_text = r.headers.get('Content-Type')
             mime = mimeparse.parse_mime_type(mime_text)
             if mime[0] == 'image':
                 self.log.debug('Is CDN, no API needed')
+                data = {'author': 'a e926 user',
+                        'source': url,
+                        'importer_display':
+                            {'header': 'Mirrored e926 image:\n\n'}}
                 image_url = url
             else:
                 self.log.debug('Not CDN, will use API')
-                id = p.match("<id>").group(1)
-                urlJ = 'http://e621.net/post/show.json?id=' + id
+                match = self.regex.match(submission.url)
+                match_data = match.groupdict()
+                id = match_data.get('id') # Get ID out of regex.
+                urlJ = 'http://e926.net/post/show.json?id=' + id
                 #if url.endswith('/'): # If the URL ends with a slash (/), remove
                 #     url = url[:-1]   #      it so the API works properly.
                 #url, sep, trash = url.partition('#') # Removes junk data from URL.
@@ -92,7 +98,12 @@ class e621Plugin:
                 self.log.debug('Will use API endpoint at ' + urlJ)
                 callapi = requests.get(urlJ) # These next lines uses the API...
                 json = callapi.json() # ...endpoint and gets the direct image URL to upload.
-                img = 'http:' + (json['file_url'])
+                img = (json['file_url'])
+                uploader = (json['author'])
+                data = {'author': 'an e926 user',
+                        'source': url,
+                        'importer_display':
+                            {'header': 'Mirrored e926 image by ' + uploader + ':\n\n'}}
                 image_url = img # image_url is the image being mirrored.
             data['import_urls'] = [image_url]
             return data

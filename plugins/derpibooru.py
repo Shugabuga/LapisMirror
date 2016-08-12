@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-# Copyright (c) 2015 kupiakos
+# Copyright (c) 2016 HeyItsShuga
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -95,7 +95,7 @@ class DerpibooruPlugin:
                 data = {'author': 'a Derpibooru user',
                         'source': url,
                         'importer_display':
-                            {'header': 'Mirrored Derpibooru image uploaded by ' + uploader + ':\n\n'}}
+                            {'header': 'Mirrored image by e926 artist ' + uploader + ':\n\n'}}
                 image_url = img # image_url is the image being mirrored.
             data['import_urls'] = [image_url]
             return data
