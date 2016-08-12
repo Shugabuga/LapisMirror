@@ -32,33 +32,33 @@ import mimeparse
 import praw
 
 
-class DerpibooruPlugin:
+class e621Plugin:
     """
-    Mirrors Derpibooru images.
+    Mirrors e621 images.
     Created by /u/HeyItsShuga
 
     """
 
     def __init__(self, useragent: str, **options):
-        """Initialize the Derpibooru importer.
+        """Initialize the e621 importer.
 
-        :param useragent: The useragent to use for querying derpibooru.
+        :param useragent: The useragent to use for querying e621.
         :param options: Other options in the configuration. Ignored.
         """
-        self.log = logging.getLogger('lapis.derpibooru')
+        self.log = logging.getLogger('lapis.e621')
         self.headers = {'User-Agent': useragent}
-        self.regex = re.compile(r'(www\.)?(derpiboo\.ru)|(derpibooru\.org)|(derpicdn\.net)$')
+        self.regex = re.compile(r'^https?://(((?:www\.)?(?:static1\.)?((e621)|(e926))\.net/(data/(?P<cdn_id>))?(post/show/(?P<id>\d+)/?)?.*))$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
-        """Import a submission from Derpibooru.
+        """Import a submission from e621.
 
         This function will define the following values in its return data:
-        - author: simply "an anonymous user on Derpibooru"
+        - author: simply "an anonymous user on e621"
         - source: The url of the submission
         - importer_display/header
         - import_urls
 
-        After we define that, we need to get the image. Since Derpibooru has an API,
+        After we define that, we need to get the image. Since e621 has an API,
         we use that to try to get the image if the image is a non-CDN URL. If it is
         a CDN, we take the image directory and upload *that* to Imgur.
 
@@ -70,41 +70,38 @@ class DerpibooruPlugin:
             url = html.unescape(submission.url)
             if not self.regex.match(urlsplit(url).netloc):
                 return None
+            data = {'author': 'a e621 user',
+                    'source': url,
+                    'importer_display':
+                        {'header': 'Mirrored e621 image:\n\n'}}
             r = requests.head(url, headers=self.headers)
             mime_text = r.headers.get('Content-Type')
             mime = mimeparse.parse_mime_type(mime_text)
             if mime[0] == 'image':
                 self.log.debug('Is CDN, no API needed')
-                data = {'author': 'a Derpibooru user',
-                        'source': url,
-                        'importer_display':
-                            {'header': 'Mirrored Derpibooru image:\n\n'}}
                 image_url = url
             else:
                 self.log.debug('Not CDN, will use API')
-                if url.endswith('/'): # If the URL ends with a slash (/), remove
-                     url = url[:-1]   #      it so the API works properly.
-                url, sep, trash = url.partition('#') # Removes junk data from URL.
-                url, sep, trash = url.partition('?') # Removes junk data from URL.
-                urlJ = url + '.json' # Allow the API endpoint to work.
+                id = p.match("<id>").group(1)
+                urlJ = 'http://e621.net/post/show.json?id=' + id
+                #if url.endswith('/'): # If the URL ends with a slash (/), remove
+                #     url = url[:-1]   #      it so the API works properly.
+                #url, sep, trash = url.partition('#') # Removes junk data from URL.
+                #url, sep, trash = url.partition('?') # Removes junk data from URL.
+                #urlJ = url + '.json' # Allow the API endpoint to work.
                 self.log.debug('Will use API endpoint at ' + urlJ)
                 callapi = requests.get(urlJ) # These next lines uses the API...
                 json = callapi.json() # ...endpoint and gets the direct image URL to upload.
-                img = 'http:' + (json['image'])
-                uploader = (json['uploader'])
-                data = {'author': 'a Derpibooru user',
-                        'source': url,
-                        'importer_display':
-                            {'header': 'Mirrored Derpibooru image uploaded by ' + uploader + ':\n\n'}}
+                img = 'http:' + (json['file_url'])
                 image_url = img # image_url is the image being mirrored.
             data['import_urls'] = [image_url]
             return data
         except Exception:
-            self.log.error('Could not import Derpibooru URL %s (%s)',
+            self.log.error('Could not import e621 URL %s (%s)',
                            submission.url, traceback.format_exc())
             return None
 
 
-__plugin__ = DerpibooruPlugin
+__plugin__ = e621Plugin
 
 # END OF LINE.
