@@ -95,7 +95,7 @@ class DerpibooruPlugin:
                 data = {'author': 'a Derpibooru user',
                         'source': url,
                         'importer_display':
-                            {'header': 'Mirrored image by e926 artist ' + uploader + ':\n\n'}}
+                            {'header': 'Mirrored image by Derpibooru artist ' + uploader + ':\n\n'}}
                 image_url = img # image_url is the image being mirrored.
             data['import_urls'] = [image_url]
             return data

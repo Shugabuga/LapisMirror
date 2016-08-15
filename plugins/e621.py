@@ -90,11 +90,6 @@ class e621Plugin:
                 match_data = match.groupdict()
                 id = match_data.get('id') # Get ID out of regex.
                 urlJ = 'http://e926.net/post/show.json?id=' + id
-                #if url.endswith('/'): # If the URL ends with a slash (/), remove
-                #     url = url[:-1]   #      it so the API works properly.
-                #url, sep, trash = url.partition('#') # Removes junk data from URL.
-                #url, sep, trash = url.partition('?') # Removes junk data from URL.
-                #urlJ = url + '.json' # Allow the API endpoint to work.
                 self.log.debug('Will use API endpoint at ' + urlJ)
                 callapi = requests.get(urlJ) # These next lines uses the API...
                 json = callapi.json() # ...endpoint and gets the direct image URL to upload.
