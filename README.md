@@ -21,7 +21,6 @@ Currently, Lapis Mirror imports from the following sites:
 * e621
 * e926
 
-
 It also exports to the following sites:
 * imgur for images
 * vid.me for videos (in addition to a direct link to the video)
