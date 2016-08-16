@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+<<<<<<< HEAD
 import logging
 import re
 import html
@@ -35,6 +36,21 @@ import praw
 class DerpibooruPlugin:
     """
     Mirrors Derpibooru images.
+=======
+import html
+import logging
+import re
+import traceback
+from urllib.parse import urlsplit, urlunsplit
+
+import mimeparse
+import praw
+import requests
+
+
+class DerpibooruPlugin:
+    """Mirrors Derpibooru images.
+>>>>>>> kupiakos/master
     Created by /u/HeyItsShuga
 
     """
@@ -82,6 +98,7 @@ class DerpibooruPlugin:
                 image_url = url
             else:
                 self.log.debug('Not CDN, will use API')
+<<<<<<< HEAD
                 if url.endswith('/'): # If the URL ends with a slash (/), remove
                      url = url[:-1]   #      it so the API works properly.
                 url, sep, trash = url.partition('#') # Removes junk data from URL.
@@ -97,6 +114,26 @@ class DerpibooruPlugin:
                         'importer_display':
                             {'header': 'Mirrored image by Derpibooru artist ' + uploader + ':\n\n'}}
                 image_url = img # image_url is the image being mirrored.
+=======
+                # If the URL ends with a slash (/), remove it so the API works properly.
+                url = url.rstrip('/')
+                # Removes query and fragment from URL.
+                urlunsplit(urlsplit(url)[:3] + ('', ''))
+                # Use the JSON API endpoint.
+                endpoint = url + '.json'
+                self.log.debug('Will use API endpoint at ' + endpoint)
+                # Use the API endpoint and get the direct image URL to upload.
+                call_api = requests.get(endpoint)
+                json = call_api.json()
+                img = 'http:' + json['image']
+                uploader = json['uploader']
+                data = {'author': 'a Derpibooru user',
+                        'source': url,
+                        'importer_display':
+                            {'header': 'Mirrored Derpibooru image uploaded by ' +
+                                       uploader + ':\n\n'}}
+                image_url = img
+>>>>>>> kupiakos/master
             data['import_urls'] = [image_url]
             return data
         except Exception:
