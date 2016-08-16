@@ -97,7 +97,7 @@ class E621Plugin:
                 json = callapi.json()
                 img = (json['file_url'])
                 uploader = json['author']
-                data = {'author': 'an e926 user',
+                data = {'author': uploader,
                         'source': url,
                         'importer_display':
                             {'header': 'Mirrored e926 image by ' + uploader + ':\n\n'}}
