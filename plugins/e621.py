@@ -49,7 +49,7 @@ class E621Plugin:
         self.regex = re.compile(
             r'^https?://(((?:www\.)?(?:static1\.)?'
             r'((e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?'
-            r'(post/show/(?P<id>\d+)/?)?.*))$')
+            r'(post/show/(?P<post_id>\d+)/?)?.*))$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
         """Import a submission from e621.
@@ -86,16 +86,15 @@ class E621Plugin:
                 image_url = url
             else:
                 self.log.debug('Using the e621 API')
-                match_data = match.groupdict()
-                # For non-CDN links, the plugin attempts to get the ID
+                # For non-CDN links, the plugin attempts to get the post_id
                 # out of the URL using regex.
-                id = match_data.get('id')
-                endpoint = 'http://e926.net/post/show.json?id=' + id
-                self.log.debug('Will use API endpoint at ' + endpoint)
+                post_id = match.group('post_id')
+                endpoint = 'http://e926.net/post/show.json?post_id=' + post_id
+                self.log.debug('Will use API endpoint at %s', endpoint)
                 # We will use the e621 API to get the image URL.
                 callapi = requests.get(endpoint)
                 json = callapi.json()
-                img = (json['file_url'])
+                img = json['file_url']
                 uploader = json['author']
                 data = {'author': uploader,
                         'source': url,
