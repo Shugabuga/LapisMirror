@@ -20,21 +20,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+import html
 import logging
 import re
-import html
-from urllib.parse import urlsplit
 import traceback
+from urllib.parse import urlsplit, urlunsplit
 
-import json
-import requests
 import mimeparse
 import praw
+import requests
 
 
 class DerpibooruPlugin:
-    """
-    Mirrors Derpibooru images.
+    """Mirrors Derpibooru images.
     Created by /u/HeyItsShuga
 
     """
@@ -82,21 +80,24 @@ class DerpibooruPlugin:
                 image_url = url
             else:
                 self.log.debug('Not CDN, will use API')
-                if url.endswith('/'): # If the URL ends with a slash (/), remove
-                     url = url[:-1]   #      it so the API works properly.
-                url, sep, trash = url.partition('#') # Removes junk data from URL.
-                url, sep, trash = url.partition('?') # Removes junk data from URL.
-                urlJ = url + '.json' # Allow the API endpoint to work.
-                self.log.debug('Will use API endpoint at ' + urlJ)
-                callapi = requests.get(urlJ) # These next lines uses the API...
-                json = callapi.json() # ...endpoint and gets the direct image URL to upload.
-                img = 'http:' + (json['image'])
-                uploader = (json['uploader'])
+                # If the URL ends with a slash (/), remove it so the API works properly.
+                url = url.rstrip('/')
+                # Removes query and fragment from URL.
+                urlunsplit(urlsplit(url)[:3] + ('', ''))
+                # Use the JSON API endpoint.
+                endpoint = url + '.json'
+                self.log.debug('Will use API endpoint at ' + endpoint)
+                # Use the API endpoint and get the direct image URL to upload.
+                call_api = requests.get(endpoint)
+                json = call_api.json()
+                img = 'http:' + json['image']
+                uploader = json['uploader']
                 data = {'author': 'a Derpibooru user',
                         'source': url,
                         'importer_display':
-                            {'header': 'Mirrored Derpibooru image uploaded by ' + uploader + ':\n\n'}}
-                image_url = img # image_url is the image being mirrored.
+                            {'header': 'Mirrored Derpibooru image uploaded by ' +
+                                       uploader + ':\n\n'}}
+                image_url = img
             data['import_urls'] = [image_url]
             return data
         except Exception:
