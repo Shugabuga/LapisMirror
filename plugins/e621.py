@@ -89,7 +89,7 @@ class E621Plugin:
                 # For non-CDN links, the plugin attempts to get the post_id
                 # out of the URL using regex.
                 post_id = match.group('post_id')
-                endpoint = 'http://e926.net/post/show.json?post_id=' + post_id
+                endpoint = 'http://e926.net/post/show.json?id=' + post_id
                 self.log.debug('Will use API endpoint at %s', endpoint)
                 # We will use the e621 API to get the image URL.
                 callapi = requests.get(endpoint)
