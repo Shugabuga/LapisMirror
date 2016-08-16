@@ -26,15 +26,14 @@ import html
 from urllib.parse import urlsplit
 import traceback
 
-import json
 import requests
 import mimeparse
 import praw
 
 
-class e621Plugin:
+class E621Plugin:
     """
-    Mirrors e621 images.
+    Mirrors e621 images using either their API or using their CDN links.
     Created by /u/HeyItsShuga
 
     """
@@ -47,7 +46,10 @@ class e621Plugin:
         """
         self.log = logging.getLogger('lapis.e621')
         self.headers = {'User-Agent': useragent}
-        self.regex = re.compile(r'^https?://(((?:www\.)?(?:static1\.)?((e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?(post/show/(?P<id>\d+)/?)?.*))$')
+        self.regex = re.compile(
+            r'^https?://(((?:www\.)?(?:static1\.)?'
+            r'((e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?'
+            r'(post/show/(?P<id>\d+)/?)?.*))$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
         """Import a submission from e621.
@@ -58,48 +60,48 @@ class e621Plugin:
         - importer_display/header
         - import_urls
 
-        After we define that, we need to get the image. Since e621 has an API,
-        we use that to try to get the image if the image is a non-CDN URL. If it is
-        a CDN, we take the image directory and upload *that* to Imgur.
+        After we define that, we need to get the image. Since e621 has an
+        API, we use that to try to get the image if the image is a non-CDN URL.
+        If it is a CDN URL, we take the image directory and upload *that* to
+        Imgur.
 
         image_url is the variable of the image to upload.
 
         :param submission: A reddit submission to parse.
         """
-        print('e621 PLUGIN DEBUG - Initiated plugin.')
         try:
             url = html.unescape(submission.url)
             match = self.regex.match(submission.url)
             if not match:
-                print('e621 PLUGIN DEBUG - Regex failed') ####################
                 return None
-            print('e621 PLUGIN DEBUG - Regex suceeded') ####################
             r = requests.head(url, headers=self.headers)
             mime_text = r.headers.get('Content-Type')
             mime = mimeparse.parse_mime_type(mime_text)
             if mime[0] == 'image':
-                self.log.debug('Is CDN, no API needed')
+                self.log.debug('Using the CDN')
                 data = {'author': 'a e926 user',
                         'source': url,
                         'importer_display':
                             {'header': 'Mirrored e926 image:\n\n'}}
                 image_url = url
             else:
-                self.log.debug('Not CDN, will use API')
-                match = self.regex.match(submission.url)
+                self.log.debug('Using the e621 API')
                 match_data = match.groupdict()
-                id = match_data.get('id') # Get ID out of regex.
-                urlJ = 'http://e926.net/post/show.json?id=' + id
-                self.log.debug('Will use API endpoint at ' + urlJ)
-                callapi = requests.get(urlJ) # These next lines uses the API...
-                json = callapi.json() # ...endpoint and gets the direct image URL to upload.
+                # For non-CDN links, the plugin attempts to get the ID
+                # out of the URL using regex.
+                id = match_data.get('id')
+                endpoint = 'http://e926.net/post/show.json?id=' + id
+                self.log.debug('Will use API endpoint at ' + endpoint)
+                # We will use the e621 API to get the image URL.
+                callapi = requests.get(endpoint)
+                json = callapi.json()
                 img = (json['file_url'])
-                uploader = (json['author'])
+                uploader = json['author']
                 data = {'author': 'an e926 user',
                         'source': url,
                         'importer_display':
                             {'header': 'Mirrored e926 image by ' + uploader + ':\n\n'}}
-                image_url = img # image_url is the image being mirrored.
+                image_url = img
             data['import_urls'] = [image_url]
             return data
         except Exception:
@@ -108,6 +110,6 @@ class e621Plugin:
             return None
 
 
-__plugin__ = e621Plugin
+__plugin__ = E621Plugin
 
 # END OF LINE.
