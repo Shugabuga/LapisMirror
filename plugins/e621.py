@@ -99,7 +99,7 @@ class E621Plugin:
                 data = {'author': uploader,
                         'source': url,
                         'importer_display':
-                            {'header': '[TEST] Mirrored e926 image by ' + uploader + ':\n\n'}}
+                            {'header': 'Mirrored e926 image by ' + uploader + ':\n\n'}}
                 image_url = img
             data['import_urls'] = [image_url]
             return data
