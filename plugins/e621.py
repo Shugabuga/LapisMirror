@@ -35,7 +35,6 @@ class E621Plugin:
     """
     Mirrors e621 images using either their API or using their CDN links.
     Created by /u/HeyItsShuga
-
     """
 
     def __init__(self, useragent: str, **options):
