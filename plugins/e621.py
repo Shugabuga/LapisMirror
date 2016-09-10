@@ -48,7 +48,7 @@ class E621Plugin:
         self.headers = {'User-Agent': useragent}
         self.regex = re.compile(
             r'^https?://(((?:www\.)?(?:static1\.)?'
-            r'((e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?'
+            r'(?P<service>(e621)|(e926))\.net/(data/.+/(?P<cdn_id>\w+))?'
             r'(post/show/(?P<post_id>\d+)/?)?.*))$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
@@ -79,16 +79,18 @@ class E621Plugin:
             mime = mimeparse.parse_mime_type(mime_text)
             if mime[0] == 'image':
                 self.log.debug('Using the CDN')
+                service = match.group('service')
                 data = {'author': 'a e926 user',
                         'source': url,
                         'importer_display':
-                            {'header': 'Mirrored e926 image:\n\n'}}
+                            {'header': 'Mirrored ' + service + ' image:\n\n'}}
                 image_url = url
             else:
                 self.log.debug('Using the e621 API')
                 # For non-CDN links, the plugin attempts to get the post_id
                 # out of the URL using regex.
                 post_id = match.group('post_id')
+                service = match.group('service')
                 endpoint = 'http://e926.net/post/show.json?id=' + post_id
                 self.log.debug('Will use API endpoint at %s', endpoint)
                 # We will use the e621 API to get the image URL.
@@ -99,7 +101,7 @@ class E621Plugin:
                 data = {'author': uploader,
                         'source': url,
                         'importer_display':
-                            {'header': 'Mirrored e926 image by ' + uploader + ':\n\n'}}
+                            {'header': 'Mirrored ' + service + ' image by ' + uploader + ':\n\n'}}
                 image_url = img
             data['import_urls'] = [image_url]
             return data
