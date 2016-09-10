@@ -82,21 +82,21 @@ class DerpibooruPlugin:
                 image_url = url
             else:
                 self.log.debug('Not CDN, will use API')
-                if url.endswith('/'): # If the URL ends with a slash (/), remove
-                     url = url[:-1]   #      it so the API works properly.
-                url, sep, trash = url.partition('#') # Removes junk data from URL.
-                url, sep, trash = url.partition('?') # Removes junk data from URL.
-                urlJ = url + '.json' # Allow the API endpoint to work.
+                if url.endswith('/'):  # If the URL ends with a slash (/), remove
+                    url = url[:-1]     # it so the API works properly.
+                url, sep, trash = url.partition('#')  # Removes junk data from URL.
+                url, sep, trash = url.partition('?')  # Removes junk data from URL.
+                urlJ = url + '.json'  # Allow the API endpoint to work.
                 self.log.debug('Will use API endpoint at ' + urlJ)
-                callapi = requests.get(urlJ) # These next lines uses the API...
-                json = callapi.json() # ...endpoint and gets the direct image URL to upload.
+                callapi = requests.get(urlJ)  # These next lines uses the API...
+                json = callapi.json()  # ...endpoint and gets the direct image URL to upload.
                 img = 'http:' + (json['image'])
                 uploader = (json['uploader'])
                 data = {'author': 'a Derpibooru user',
                         'source': url,
                         'importer_display':
                             {'header': 'Mirrored image by Derpibooru artist ' + uploader + ':\n\n'}}
-                image_url = img # image_url is the image being mirrored.
+                image_url = img  # image_url is the image being mirrored.
             data['import_urls'] = [image_url]
             return data
         except Exception:
