@@ -47,7 +47,7 @@ class DerpibooruPlugin:
         """
         self.log = logging.getLogger('lapis.derpibooru')
         self.headers = {'User-Agent': useragent}
-        self.regex = re.compile(r'(www\.)?(derpiboo\.ru)|(derpibooru\.org)|(derpicdn\.net)$')
+        self.regex = re.compile(r'(www\.)?(derpiboo\.ru)|(derpibooru\.org)|(trixiebooru\.org)|(derpicdn\.net)$')
 
     def import_submission(self, submission: praw.objects.Submission) -> dict:
         """Import a submission from Derpibooru.
@@ -74,21 +74,18 @@ class DerpibooruPlugin:
             mime_text = r.headers.get('Content-Type')
             mime = mimeparse.parse_mime_type(mime_text)
             # if mime[0] == 'image':
-            self.log.debug('This plugin is now using the oEmbed API for Derpibooru. Under experimentation!!!')
-            data = {'author': 'a Derpibooru user',
-                    'source': url,
-                    'importer_display':
-                        {'header': 'Mirrored Derpibooru image:\n\n'}}
-            jsonUrl = 'http://derpiboo.ru/oembed.json?url=' + url  # Allow the API endpoint to work.
-            callapi = requests.get(jsonUrl)  # These next lines uses the API...
-            json = callapi.json()  # ...endpoint and gets the uploader's name.
+            self.log.debug('Initiating Derpibooru plugin')
+            jsonUrl = 'http://derpiboo.ru/oembed.json?url=' + url  # The API endpoint
+            callapi = requests.get(jsonUrl)  # Fetch the API's JSON file.
+            json = callapi.json()
             img = 'http:' + (json['thumbnail_url'])
             author = (json['author_name'])
             provider_url = (json['provider_url'])
             data = {'author': author,
                     'source': img,
                     'importer_display':
-                        {'header': 'Mirrored [image](' + provider_url + ') by Derpibooru artist [' + author + '](https://derpiboo.ru/tags/artist-colon-' + author + '):\n\n'}}
+                        {'header': 'Mirrored [image](' + provider_url + ') by Derpibooru artist \
+                        [' + author + '](https://derpiboo.ru/tags/artist-colon-' + author + '):\n\n'}}
             image_url = img
             data['import_urls'] = [image_url]
             return data
